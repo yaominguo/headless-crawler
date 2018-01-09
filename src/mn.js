@@ -18,7 +18,7 @@ const srcToImg = require('./helper/srcToImg');
 
     await page.focus('#kw');
     await page.keyboard.sendCharacter('狗');
-    await page.click('.s_sbtn');
+    await page.click('.s_search');
     console.log('go to search list');
 
     page.on('load', async() => {
@@ -30,7 +30,7 @@ const srcToImg = require('./helper/srcToImg');
         });
         console.log(`get ${srcs.length} images, start download...`);
 
-        srcs.forEach(async (src) => {
+        srcs.forEach((src) => {
             srcToImg(src, mn);
         });
 
