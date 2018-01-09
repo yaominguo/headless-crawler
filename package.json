@@ -1,0 +1,22 @@
+{
+  "name": "headless-crawler",
+  "version": "1.0.0",
+  "description": "百度图片的爬虫练习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaominguo/headless-crawler.git"
+  },
+  "author": "Max Kwok",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yaominguo/headless-crawler/issues"
+  },
+  "homepage": "https://github.com/yaominguo/headless-crawler#readme",
+  "dependencies": {
+    "puppeteer": "^0.13.0"
+  }
+}
