@@ -34,7 +34,7 @@ const base64ToImg = async function (base64Str, dir) {
     //data:image/jpeg;base64,/abcdefg    base64的格式一般是这样
     const matches = base64Str.match(/^data:(.+?);base64,(.+)$/);
     try {
-        const ext = matches[1].split('/')[1].replace('jpeg', 'jpg');
+        const ext = matches[1].split('/')[1].replace('jpeg', 'jpg');//将后缀替换为jpg，不换也可以
         const file = path.join(dir, `${Date.now()}.${ext}`); //自设时间戳作为名字
         await writeFile(file, matches[2], 'base64');
         console.log(file);
