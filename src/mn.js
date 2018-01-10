@@ -4,11 +4,14 @@ const {
 const puppeteer = require('puppeteer');
 const srcToImg = require('./helper/srcToImg');
 
+const gotoUrl='https://image.baidu.com/';
+const searchWord='猫';
+
 (async() => {
     const browser = await puppeteer.launch({executablePath: '/Applications/Chromium.app/Contents/MacOS/Chromium',headless: false});
     const page = await browser.newPage();
-    await page.goto('https://image.baidu.com/'); //打开百度图片
-    console.log('go to https://image.baidu.com/');
+    await page.goto(gotoUrl); //打开百度图片
+    console.log(`go to ${gotoUrl}`);
 
     await page.setViewport({ //由于有懒加载，所以设置屏幕大一点能多获取一些图片
         width: 1920,
@@ -17,7 +20,7 @@ const srcToImg = require('./helper/srcToImg');
     console.log('reset viewport');
 
     await page.focus('#kw'); //focus在搜索输入框中
-    await page.keyboard.sendCharacter('狗'); //在输入框中输入
+    await page.keyboard.sendCharacter(searchWord); //在输入框中输入
     await page.click('.s_search'); //点击搜索按钮
     console.log('go to search list');
 
